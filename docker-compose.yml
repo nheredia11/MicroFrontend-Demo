@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  host:
+    build: ./host
+    ports: ['8080:80']
+  projects:
+    build: ./mfe-projects
+    ports: ['8081:80']
+  tasks:
+    build: ./mfe-tasks
+    ports: ['8082:80']

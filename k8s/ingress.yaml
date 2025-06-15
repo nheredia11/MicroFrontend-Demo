@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: microfrontends
+spec:
+  rules:
+  - host: mife.local # ⇢ host  (shell)
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: host
+            port:
+              number: 80
+  - host: projects.mife.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: projects
+            port:
+              number: 80
+  - host: tasks.mife.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: tasks
+            port:
+              number: 80

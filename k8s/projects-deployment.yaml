@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: projects
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: projects
+  template:
+    metadata:
+      labels:
+        app: projects
+    spec:
+      containers:
+      - name: projects
+        image: projects:latest # docker build -t projects:latest mfe-projects/
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: projects
+spec:
+  selector:
+    app: projects
+  ports:
+  - port: 80
+    targetPort: 80
