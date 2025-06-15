@@ -6,11 +6,17 @@ Este proyecto es una demostración práctica de una arquitectura de **Microfront
 
 ## 📦 Estructura del Proyecto
 microfrontend-demo/
+
 ├── host/ # Contenedor principal (Shell)
+
 ├── mfe-projects/ # Microfrontend para proyectos
+
 ├── mfe-tasks/ # Microfrontend para tareas
+
 ├── k8s/ # Manifiestos Kubernetes (opcional)
+
 ├── docker-compose.yml
+
 ├── run.bat # Script de arranque para Windows
 
 
